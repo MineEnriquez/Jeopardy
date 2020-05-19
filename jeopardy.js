@@ -1,9 +1,6 @@
 GetQuestions("https://opentdb.com/api.php?amount=10&category=12", 1);
-//GetQuestions("https://opentdb.com/api.php?amount=5&category=22", 1);
-
 GetQuestions("https://opentdb.com/api.php?amount=10&category=20", 2);
-// GetQuestions("https://opentdb.com/api.php?amount=10&category=17", 3);
-GetQuestions("https://opentdb.com/api.php?amount=10&category=9", 3); //general
+GetQuestions("https://opentdb.com/api.php?amount=10&category=9", 3); 
 
 function GetQuestions(_url, _id) {
     $.get(_url, function (data) {
@@ -64,6 +61,8 @@ function GetQuestions(_url, _id) {
             lst.append(seg);
             questionNumber++;
         });
+
+
     })
 }
 function showQuestion(QuestionId, PointId) {
@@ -86,12 +85,12 @@ function checkAnswer(QuestionId) {
         $("#" + QuestionId + " #answer").text("Correct!").addClass("correct");
         $("#" + QuestionId).addClass("GreenDisabled");
         $("#totalpoints").text(t + points);
+        $.confetti.start();
     }
     else {
         $("#" + QuestionId + " #answer").text("Wrong! ( " + correctAnswer + " )").addClass("boo");
         $("#" + QuestionId).addClass("GrayDisabled");
         var points = parseInt($("#" + QuestionId).data('value'));
         $("#totalpoints").text(t - points);
-
     }
 }

@@ -11,7 +11,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="jquery.confetti.js"></script>
     <script src="jeopardy.js"></script>
+    <script>
+        $( document ).ready(function() {
+            console.log( "ready!" );
+              $.confetti.init();
+        });
+    </script>
 </head>
 
 <body>
@@ -22,6 +29,7 @@
         </div>
         <span class="title">Jeopardy!!</span>
     </div>
+
      <div class="backstyle"></div>
     <div class="container  active">
         <div class="row">
